@@ -1,12 +1,12 @@
 module Main where
 
 
-import Control.Monad
-import Data.Bool
-import Data.Char
+import Control.Monad        (when)
+import Data.Bool            (bool)
+import Data.Char            (toUpper)
 import Splizzock.Internal
-import System.IO
-import System.Random
+import System.IO            (hFlush, stdout)
+import System.Random        (random, newStdGen)
 
 main :: IO ()
 main = putStrLn "\n. - •   S P L I Z Z O C K   • - ." >> runGame 1 0 0

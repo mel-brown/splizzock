@@ -1,7 +1,7 @@
 module Splizzock.Internal (Hand(..)) where
 
-import Control.Arrow
-import System.Random
+import Control.Arrow (first)
+import System.Random (Random, randomR, random)
 
 data Hand = Rock | Paper | Scissors | Lizard | Spock deriving (Eq, Show, Enum, Bounded)
 
