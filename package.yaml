@@ -1,0 +1,68 @@
+name:                splizzock
+version:             0.1.0.0
+github:              "mel-brown/splizzock"
+license:             BSD3
+author:              "Melanie Brown"
+maintainer:          "brown.m@protonmail.com"
+copyright:           "2020 Melanie Brown"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Game
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/mel-brown/splizzock#readme>
+
+dependencies:
+  - base        >= 4.7 && < 5
+  - random      >= 1.1 && < 2
+
+default-extensions:
+  - LambdaCase
+  - MultiWayIf
+  - TupleSections
+  - NamedFieldPuns
+  - BangPatterns
+  - ViewPatterns
+  - TypeOperators
+  - KindSignatures
+  - InstanceSigs
+  - OverloadedStrings
+  - EmptyCase
+  - GeneralizedNewtypeDeriving
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveLift
+  - DeriveTraversable
+
+library:
+  source-dirs: src
+
+executables:
+  splizzock-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - splizzock
+
+# tests:
+#   splizzock-test:
+#     main:                Spec.hs
+#     source-dirs:         test
+#     ghc-options:
+#     - -threaded
+#     - -rtsopts
+#     - -with-rtsopts=-N
+#     dependencies:
+#     - splizzock
