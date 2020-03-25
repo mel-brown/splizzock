@@ -37,9 +37,9 @@ runGame n player ai = do
     bool (putStrLn $ "\n" ++ winnerDialog newp newa) (runGame newn newp newa) . (=="Y") . map toUpper =<< getLine
 
 bestOf :: Int -> Int -> Int -> String
-bestOf n p1 p2 = if   max p1 p2 < n - 1
-                 then "Best " ++ show (n - min p1 p2) ++ " out of " ++ show (2*(n - min p1 p2) - 1) ++ "? (y/n) "
-                 else "Best " ++ show n ++ " out of " ++ show (2*n - 1) ++ "? (y/n) "
+bestOf n p1 p2 = "Best " ++ show games ++ " out of " ++ show outOf ++ "? (y/n) " where
+    games = if max p1 p2 < n - 1 then n - min p1 p2 else n
+    outOf = if max p1 p2 < n - 1 then 2*(n - min p1 p2) - 1 else 2*n - 1
 
 winnerDialog :: Int -> Int -> String
 winnerDialog h1 h2 = case compare h1 h2 of
